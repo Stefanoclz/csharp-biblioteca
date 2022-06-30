@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharp_biblioteca
 {
-    public class Liste
+    internal class Liste
     {
         public List<Libro> listaLibri = new List<Libro>();
 
@@ -60,6 +60,43 @@ namespace csharp_biblioteca
                 }
             }
             return check;
+        }
+
+        public string DetailBook(string param)
+        {
+
+            string detail = "";
+            foreach (Libro libro in listaLibri)
+            {
+                if (param == libro.title || param == libro.author)
+                {
+                    detail = $"titolo: {libro.title} | autore: {libro.author} | anno: {libro.year} | genere: {libro.genre} | numero pagine : {libro.pages} | ISBN: {libro.isbn}";
+                    break;
+                }
+                else
+                {
+                    detail = "nessuna informazione";
+                }
+            }
+            return detail;
+        }
+
+        public string DetailDvd(string param)
+        {
+            string detail = "";
+            foreach (Dvd dvd in listaDvd)
+            {
+                if (param == dvd.title || param == dvd.author)
+                {
+                    detail = $"titolo: {dvd.title} | regista: {dvd.author} | anno: {dvd.year} | genere: {dvd.genre} | durata in ore : {dvd.duration} | seriale: {dvd.serial}";
+                    break;
+                }
+                else
+                {
+                    detail = "nessuna informazione";
+                }
+            }
+            return detail;
         }
     }
 }

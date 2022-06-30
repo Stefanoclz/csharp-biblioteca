@@ -48,6 +48,20 @@ if(scelta2 == 1)
     if(check == true)
     {
         Console.WriteLine("Libro trovato!");
+
+        Console.WriteLine("Menu elemento:");
+        Console.WriteLine("1. dettagli");
+        Console.WriteLine("2. Richiedi prestito");
+        int scelta3 = Int32.Parse(Console.ReadLine());
+
+        if(scelta3 == 1)
+        {
+            string detail = new Liste().DetailBook(cercaLibro);
+            Console.WriteLine(detail);
+        } else if (scelta3 == 2)
+        {
+            Console.WriteLine("Percorso non ancora programmato");
+        }
     } else
     {
         Console.WriteLine("Spiacenti, libro non presente");
@@ -63,6 +77,23 @@ if(scelta2 == 1)
     if (check == true)
     {
         Console.WriteLine("Dvd trovato!");
+
+        Console.WriteLine("Menu elemento:");
+        Console.WriteLine("1. dettagli");
+        Console.WriteLine("2. Richiedi prestito");
+
+        int scelta4 = Int32.Parse(Console.ReadLine());
+
+        if (scelta4 == 1)
+        {
+            string detail = new Liste().DetailDvd(cercaDvd);
+            Console.WriteLine(detail);
+        }
+        else if (scelta4 == 2)
+        {
+            Console.WriteLine("Percorso non ancora programmato");
+        }
+
     } else
     {
         Console.WriteLine("Spiacenti, dvd non trovato");
