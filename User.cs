@@ -27,5 +27,11 @@ namespace csharp_biblioteca
 
             this.isLoggedIn = true;
         }
+
+        public override string ToString()
+        {
+            string message = $"nome: {this.name} | cognome: {this.surname} | email: {this.email} | password: {this.password} | telefono: {this.phone}";
+            return message;
+        }
     }
 }
